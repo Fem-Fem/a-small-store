@@ -6,4 +6,5 @@ Put on Netlify
 
 #######
 
+npm install --save react react-dom next
 npm install formik --save
