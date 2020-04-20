@@ -1,21 +1,12 @@
 import Layout from '../components/MyLayout';
 import { Formik } from 'formik';
 
-export default function Index() {
+export default function SignUp() {
 	return (
 		<Layout>
 			<div>
 				<Formik
 					initialValues={{email: '', password: ''}}
-					validate={values => {
-						const errors = {};
-						if (!values.email) {
-							errors.email = 'Required'
-						} else if (!values.password) {
-							errors.password = 'Required'
-						}
-						return errors;
-					}}
 					onSubmit={(values, { setSubmitting }) => {
 						setTimeout(() => {
 							alert(JSON.stringify(values, null, 2));

@@ -1,7 +1,7 @@
 import Layout from '../components/MyLayout';
 import { Formik } from 'formik';
 
-export default function Index() {
+export default function Login() {
 	return (
 		<Layout>
 			<div>
