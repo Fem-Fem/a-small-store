@@ -6,9 +6,19 @@ const linkStyle = {
 	marginRight: 15
 }
 
+function isEmpty(obj) {
+	for (var key in obj) {
+		if(obj.hasOwnProperty(key)) {
+			return false;
+		}
+	}
+	return true;
+}
+
 function Filter() {
-	const isLoggedIn = useSelector(state => state.users.current_user);
-	if (isLoggedIn.length) {
+	const current_user = useSelector(state => state.users.current_user);
+	console.log(current_user)
+	if (!isEmpty(current_user)) {
 		return (
 			<div>
 				<Link href="/">

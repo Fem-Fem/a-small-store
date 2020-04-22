@@ -13,23 +13,26 @@ export function getUsers() {
 	};
 }
 
-export function addUser(user) {
+export function addUser(username, password) {
 	return {
 		type: ADD_TO_CART,
-		payload: user
+		username: username,
+		password: password
 	};
 }
 
-export function logIn(user) {
+export function logIn(username, password) {
 	return {
 		type: LOG_IN,
-		payload: user
+		username: username,
+		password: password
 	};
 }
 
 export function logOut(user) {
 	return {
 		type: LOG_OUT,
-		payload: user
+		username: username,
+		password: password
 	};
 }

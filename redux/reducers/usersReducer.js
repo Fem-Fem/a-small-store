@@ -1,5 +1,5 @@
 export default function usersReducer(state = {
-	users: [{'obafad94@gmail.com':'obafad94@gmail.com'}],
+	users: {'obafad94@gmail.com':'obafad94@gmail.com'},
 	current_user: {}
 }, action) {
 
@@ -13,24 +13,24 @@ export default function usersReducer(state = {
 		case 'ADD_USER':
 			return {
 				...state,
-				users: [
+				users: {
 					...state.users,
-					action.payload
-				]
+					[action.username]: action.password
+				}
 			}
 
 		case 'LOG_IN':
 			return {
 				...state,
-				current_user: [
-					action.payload
-				]
+				current_user: {
+					[action.username]: action.password
+				}
 			}
 
 		case 'LOG_OUT':
 			return {
 				...state,
-				current_user: []
+				current_user: {}
 			}
 			
 		default:

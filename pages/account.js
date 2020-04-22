@@ -3,15 +3,14 @@ import {useSelector, useDispatch} from 'react-redux';
 
 export default function Account() {
 	function Show() {
-		const this_product = useSelector(state => state.users.current_user);
-		const isLoggedIn = this_product;
-		console.log(this_product)
+		const this_user = useSelector(state => state.users.current_user);
+		console.log(this_user)
 
-		if (isLoggedIn.length) {
+		if (this_user) {
 			return (
 				<div>
-					<p>{this_product[0][0]}</p>
-			 		<p>{this_product[0][1]}</p>
+					<p>{this_user.username}</p>
+			 		<p>{this_user.password}</p>
 			 	</div>
 			 	)
 		}

@@ -4,31 +4,20 @@ import {useSelector, useDispatch} from 'react-redux';
 
 export default function Login() {
 	const users = useSelector(state => state.users.users);
+	const dispatch = useDispatch();
 
-		for(var i in users) {
-			console.log(users[i])
-			console.log(users)
-			console.log(Object.keys(users)[0])
-			console.log(i)
-		}
 	function Verify(email, password) {
 		
 		const usernames = Object.keys(users);
 
-		for(var i in users) {
-			console.log(users[i])
-		}
-
 		if (usernames.includes(email)) {
-			console.log(usernames)
-			if (users[email] == "password") {
+			if (users[email] == password) {
 				return true;
 			}
 		}
 		return false;
 	}
 
-	const dispatch = useDispatch();
 	return (
 		<Layout>
 			<div>
@@ -49,7 +38,7 @@ export default function Login() {
 					onSubmit={(values, { setSubmitting }) => {
 						setTimeout(() => {
 							alert(JSON.stringify(values, null, 2));
-							setSubmitting(false)
+							setSubmitting(true)
 						}, 400);
 					}}
 				>
@@ -77,7 +66,7 @@ export default function Login() {
 							onBlur={handleBlur}
 							value={values.password}
 						/>
-						<button type="submit" onSubmit={() => dispatch({type: 'LOG_IN', payload: [values.email, values.password]})}>
+						<button type="submit" onClick={() => dispatch({type: 'LOG_IN', username: values.email, password: values.password})}>
 							Log In
 						</button>
 					</form>

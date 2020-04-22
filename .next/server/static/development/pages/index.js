@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 5);
+/******/ 	return __webpack_require__(__webpack_require__.s = 3);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -117,15 +117,26 @@ const linkStyle = {
   marginRight: 15
 };
 
-function Filter() {
-  const isLoggedIn = Object(react_redux__WEBPACK_IMPORTED_MODULE_2__["useSelector"])(state => state.users.current_user);
+function isEmpty(obj) {
+  for (var key in obj) {
+    if (obj.hasOwnProperty(key)) {
+      return false;
+    }
+  }
 
-  if (isLoggedIn.length) {
+  return true;
+}
+
+function Filter() {
+  const current_user = Object(react_redux__WEBPACK_IMPORTED_MODULE_2__["useSelector"])(state => state.users.current_user);
+  console.log(current_user);
+
+  if (!isEmpty(current_user)) {
     return __jsx("div", {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 13,
+        lineNumber: 23,
         columnNumber: 4
       }
     }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
@@ -133,7 +144,7 @@ function Filter() {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 14,
+        lineNumber: 24,
         columnNumber: 5
       }
     }, __jsx("a", {
@@ -141,7 +152,7 @@ function Filter() {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 15,
+        lineNumber: 25,
         columnNumber: 6
       }
     }, "Home")), __jsx(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
@@ -149,7 +160,7 @@ function Filter() {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 17,
+        lineNumber: 27,
         columnNumber: 5
       }
     }, __jsx("a", {
@@ -157,7 +168,7 @@ function Filter() {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 18,
+        lineNumber: 28,
         columnNumber: 6
       }
     }, "Menu")), __jsx(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
@@ -165,7 +176,7 @@ function Filter() {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 20,
+        lineNumber: 30,
         columnNumber: 5
       }
     }, __jsx("a", {
@@ -173,7 +184,7 @@ function Filter() {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 21,
+        lineNumber: 31,
         columnNumber: 6
       }
     }, "Cart")), __jsx(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
@@ -181,7 +192,7 @@ function Filter() {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 23,
+        lineNumber: 33,
         columnNumber: 5
       }
     }, __jsx("a", {
@@ -189,7 +200,7 @@ function Filter() {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 24,
+        lineNumber: 34,
         columnNumber: 6
       }
     }, "Account")), __jsx(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
@@ -197,7 +208,7 @@ function Filter() {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 26,
+        lineNumber: 36,
         columnNumber: 5
       }
     }, __jsx("a", {
@@ -205,7 +216,7 @@ function Filter() {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 27,
+        lineNumber: 37,
         columnNumber: 6
       }
     }, "Log Out")));
@@ -215,7 +226,7 @@ function Filter() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 33,
+      lineNumber: 43,
       columnNumber: 3
     }
   }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
@@ -223,7 +234,7 @@ function Filter() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 34,
+      lineNumber: 44,
       columnNumber: 4
     }
   }, __jsx("a", {
@@ -231,7 +242,7 @@ function Filter() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 35,
+      lineNumber: 45,
       columnNumber: 5
     }
   }, "Home")), __jsx(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
@@ -239,7 +250,7 @@ function Filter() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 37,
+      lineNumber: 47,
       columnNumber: 4
     }
   }, __jsx("a", {
@@ -247,7 +258,7 @@ function Filter() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 38,
+      lineNumber: 48,
       columnNumber: 5
     }
   }, "Menu")), __jsx(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
@@ -255,7 +266,7 @@ function Filter() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 40,
+      lineNumber: 50,
       columnNumber: 4
     }
   }, __jsx("a", {
@@ -263,7 +274,7 @@ function Filter() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 41,
+      lineNumber: 51,
       columnNumber: 5
     }
   }, "Cart")), __jsx(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
@@ -271,7 +282,7 @@ function Filter() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 43,
+      lineNumber: 53,
       columnNumber: 4
     }
   }, __jsx("a", {
@@ -279,7 +290,7 @@ function Filter() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 44,
+      lineNumber: 54,
       columnNumber: 5
     }
   }, "Sign Up")), __jsx(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
@@ -287,7 +298,7 @@ function Filter() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 46,
+      lineNumber: 56,
       columnNumber: 4
     }
   }, __jsx("a", {
@@ -295,7 +306,7 @@ function Filter() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 47,
+      lineNumber: 57,
       columnNumber: 5
     }
   }, "Log In")), __jsx(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
@@ -303,7 +314,7 @@ function Filter() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 49,
+      lineNumber: 59,
       columnNumber: 4
     }
   }, __jsx("a", {
@@ -311,7 +322,7 @@ function Filter() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 50,
+      lineNumber: 60,
       columnNumber: 5
     }
   }, "Account")));
@@ -321,7 +332,7 @@ const Header = () => __jsx(Filter, {
   __self: undefined,
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 57,
+    lineNumber: 67,
     columnNumber: 2
   }
 });
@@ -2081,7 +2092,7 @@ function Index() {
 
 /***/ }),
 
-/***/ 5:
+/***/ 3:
 /*!*******************************!*\
   !*** multi ./pages/index.tsx ***!
   \*******************************/

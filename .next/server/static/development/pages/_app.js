@@ -607,9 +607,9 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 function usersReducer(state = {
-  users: [{
+  users: {
     'obafad94@gmail.com': 'obafad94@gmail.com'
-  }],
+  },
   current_user: {}
 }, action) {
   switch (action.type) {
@@ -620,17 +620,21 @@ function usersReducer(state = {
 
     case 'ADD_USER':
       return _objectSpread({}, state, {
-        users: [...state.users, action.payload]
+        users: _objectSpread({}, state.users, {
+          [action.username]: action.password
+        })
       });
 
     case 'LOG_IN':
       return _objectSpread({}, state, {
-        current_user: [action.payload]
+        current_user: {
+          [action.username]: action.password
+        }
       });
 
     case 'LOG_OUT':
       return _objectSpread({}, state, {
-        current_user: []
+        current_user: {}
       });
 
     default:
