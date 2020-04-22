@@ -1,6 +1,6 @@
 import Layout from '../components/MyLayout';
 import {useSelector, useDispatch} from 'react-redux';
-import Product from '../components/product';
+import Product from '../components/Product';
 
 
 	function Show() {
