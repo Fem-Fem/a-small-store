@@ -6,10 +6,6 @@ import {useSelector, useDispatch} from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { getProducts } from '../redux/actions/product_actions';
 
-// import client from '../components/client';
-
-// const productsPromise = client.product.fetchAll();
-// const shopPromise = client.shop.fetchInfo();
 let arr = []
 const client = Client.buildClient({
 	storefrontAccessToken: '26853603f3b67fead6e3bcf3ee602758',
