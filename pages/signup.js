@@ -1,16 +1,27 @@
 import Layout from '../components/MyLayout';
 import { Formik } from 'formik';
+import {useSelector, useDispatch} from 'react-redux';
 
-export default function SignUp() {
+export default function Login() {
+	const dispatch = useDispatch();
 	return (
 		<Layout>
 			<div>
 				<Formik
 					initialValues={{email: '', password: ''}}
+					validate={values => {
+						const errors = {};
+						if (!values.email) {
+							errors.email = 'Required'
+						} else if (!values.password) {
+							errors.password = 'Required'
+						}
+						return errors;
+					}}
 					onSubmit={(values, { setSubmitting }) => {
 						setTimeout(() => {
 							alert(JSON.stringify(values, null, 2));
-							setSubmitting(false)
+							setSubmitting(true)
 						}, 400);
 					}}
 				>
@@ -38,7 +49,7 @@ export default function SignUp() {
 							onBlur={handleBlur}
 							value={values.password}
 						/>
-						<button type="submit" disabled={isSubmitting}>
+						<button type="submit" onClick={() => dispatch({type: 'ADD_USER', payload: [values.email, values.password]})}>
 							Sign Up
 						</button>
 					</form>
