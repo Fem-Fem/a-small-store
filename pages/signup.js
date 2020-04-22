@@ -18,11 +18,9 @@ export default function Login() {
 						}
 						return errors;
 					}}
-					onSubmit={(values, { setSubmitting }) => {
-						setTimeout(() => {
-							alert(JSON.stringify(values, null, 2));
-							setSubmitting(true)
-						}, 400);
+					onSubmit={(values, { actions }) => {
+						console.log(values);
+						dispatch({type: 'ADD_USER', username: values.email, password: values.password})
 					}}
 				>
 				{({
@@ -49,7 +47,7 @@ export default function Login() {
 							onBlur={handleBlur}
 							value={values.password}
 						/>
-						<button type="submit" onClick={() => dispatch({type: 'ADD_USER', payload: [values.email, values.password]})}>
+						<button type="submit">
 							Sign Up
 						</button>
 					</form>

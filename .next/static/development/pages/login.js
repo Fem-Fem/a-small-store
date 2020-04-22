@@ -15552,11 +15552,13 @@ function Login() {
       return errors;
     },
     onSubmit: function onSubmit(values, _ref) {
-      var setSubmitting = _ref.setSubmitting;
-      setTimeout(function () {
-        alert(JSON.stringify(values, null, 2));
-        setSubmitting(true);
-      }, 400);
+      var actions = _ref.actions;
+      console.log(values);
+      dispatch({
+        type: 'LOG_IN',
+        username: values.email,
+        password: values.password
+      });
     },
     __self: this,
     __source: {
@@ -15577,7 +15579,7 @@ function Login() {
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 54,
+        lineNumber: 52,
         columnNumber: 6
       }
     }, __jsx("input", {
@@ -15589,7 +15591,7 @@ function Login() {
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 55,
+        lineNumber: 53,
         columnNumber: 7
       }
     }), __jsx("input", {
@@ -15601,22 +15603,16 @@ function Login() {
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 62,
+        lineNumber: 60,
         columnNumber: 7
       }
     }), __jsx("button", {
       type: "submit",
-      onClick: function onClick() {
-        return dispatch({
-          type: 'LOG_IN',
-          username: values.email,
-          password: values.password
-        });
-      },
+      disabled: isSubmitting,
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 69,
+        lineNumber: 67,
         columnNumber: 7
       }
     }, "Log In"));

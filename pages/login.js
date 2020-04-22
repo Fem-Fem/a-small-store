@@ -35,11 +35,9 @@ export default function Login() {
 						console.log(errors)
 						return errors;
 					}}
-					onSubmit={(values, { setSubmitting }) => {
-						setTimeout(() => {
-							alert(JSON.stringify(values, null, 2));
-							setSubmitting(true)
-						}, 400);
+					onSubmit={(values, { actions }) => {
+						console.log(values);
+						dispatch({type: 'LOG_IN', username: values.email, password: values.password})
 					}}
 				>
 				{({
@@ -66,7 +64,7 @@ export default function Login() {
 							onBlur={handleBlur}
 							value={values.password}
 						/>
-						<button type="submit" onClick={() => dispatch({type: 'LOG_IN', username: values.email, password: values.password})}>
+						<button type="submit" disabled={isSubmitting}>
 							Log In
 						</button>
 					</form>
