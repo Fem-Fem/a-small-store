@@ -7,6 +7,7 @@ import Link from 'next/link';
 function Product(this_product) {
 	// const this_product = useSelector(state => state.products.products)
 	const dispatch = useDispatch();
+	// console.log(this_product)
 
 	return (
 		<div className="Product">

@@ -17,7 +17,6 @@ function isEmpty(obj) {
 
 function Filter() {
 	const current_user = useSelector(state => state.users.current_user);
-	console.log(current_user)
 	if (!isEmpty(current_user)) {
 		return (
 			<div>
