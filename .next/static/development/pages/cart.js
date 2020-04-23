@@ -318,15 +318,13 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
 function Product(this_product) {
-  // const this_product = useSelector(state => state.products.products)
-  var dispatch = Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["useDispatch"])(); // console.log(this_product)
-
+  var dispatch = Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["useDispatch"])();
   return __jsx("div", {
     className: "Product",
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 13,
+      lineNumber: 11,
       columnNumber: 3
     }
   }, "Product: ", __jsx(next_link__WEBPACK_IMPORTED_MODULE_3___default.a, {
@@ -334,28 +332,28 @@ function Product(this_product) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 14,
+      lineNumber: 12,
       columnNumber: 13
     }
   }, __jsx("a", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 15,
+      lineNumber: 13,
       columnNumber: 5
     }
   }, this_product.this_product.title)), __jsx("div", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 17,
+      lineNumber: 15,
       columnNumber: 4
     }
   }, this_product.this_product.title), __jsx("div", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 18,
+      lineNumber: 16,
       columnNumber: 4
     }
   }, function () {
@@ -376,7 +374,7 @@ function Product(this_product) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 26,
+      lineNumber: 24,
       columnNumber: 4
     }
   }, "Add to cart"));
@@ -17427,8 +17425,12 @@ function Show() {
   var hash = {};
 
   for (var i = 0; i < this_cart.length; i++) {
-    if (hash[this_cart[i]] == null) {
-      hash[this_cart[i]] = 1;
+    console.log(this_cart[i]);
+    console.log(this_cart[i].title);
+    console.log(hash[this_cart[i]]);
+
+    if (hash[this_cart[i].title] == null) {
+      hash[this_cart[i].title] = 1;
       arr_prod.push(this_cart[i]);
       arr_quant.push(1);
     } else {
@@ -17437,12 +17439,13 @@ function Show() {
     }
   }
 
+  console.log(arr_prod);
   return arr_prod.map(function (product) {
     return __jsx("div", {
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 23,
+        lineNumber: 26,
         columnNumber: 34
       }
     }, __jsx(_components_Product__WEBPACK_IMPORTED_MODULE_3__["default"], {
@@ -17451,7 +17454,7 @@ function Show() {
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 23,
+        lineNumber: 26,
         columnNumber: 39
       }
     }), " ", arr_quant[arr_prod.indexOf(product)]);
@@ -17463,14 +17466,14 @@ function Cart() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 30,
+      lineNumber: 33,
       columnNumber: 3
     }
   }, __jsx(Show, {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 31,
+      lineNumber: 34,
       columnNumber: 4
     }
   }));
@@ -17542,7 +17545,7 @@ var getProducts = function getProducts() {
 
 /***/ }),
 
-/***/ 2:
+/***/ 3:
 /*!***********************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2Fcart&absolutePagePath=C%3A%5CUsers%5Cobafa%5CDocuments%5Cchef-femi%5Cpages%5Ccart.js ***!
   \***********************************************************************************************************************************/
@@ -17565,5 +17568,5 @@ module.exports = dll_2adc2403d89adc16ead0;
 
 /***/ })
 
-},[[2,"static/runtime/webpack.js"]]]);
+},[[3,"static/runtime/webpack.js"]]]);
 //# sourceMappingURL=cart.js.map

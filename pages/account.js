@@ -9,8 +9,8 @@ export default function Account() {
 		if (this_user) {
 			return (
 				<div>
-					<p>{this_user.username}</p>
-			 		<p>{this_user.password}</p>
+					<p>Username: {Object.keys(this_user)}</p>
+			 		<p>Password: {Object.values(this_user)}</p>
 			 	</div>
 			 	)
 		}
