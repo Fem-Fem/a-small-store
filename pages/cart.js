@@ -24,7 +24,6 @@ import {Title, Item} from '../components/Format';
 		}
 		console.log(arr_prod)
 		return arr_prod.map(product => <Item><Product key={product} this_product={product}/> {arr_quant[arr_prod.indexOf(product)]}</Item>)
-		// return <div>Hi</div>
 
 	}
 
