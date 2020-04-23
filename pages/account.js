@@ -1,10 +1,16 @@
 import Layout from '../components/MyLayout';
 import {useSelector, useDispatch} from 'react-redux';
+import styled from 'styled-components';
+
+const Title = styled.h1`
+	font-size: 2em;
+	text-align: center;
+	color: black;
+`;
 
 export default function Account() {
 	function Show() {
 		const this_user = useSelector(state => state.users.current_user);
-		console.log(this_user)
 
 		if (this_user) {
 			return (
@@ -19,7 +25,7 @@ export default function Account() {
 
 	return (
 		<Layout>
-			<p>Look at your profile information!</p>
+			<Title>Account</Title>
 			<Show />
 		</Layout>
 	);

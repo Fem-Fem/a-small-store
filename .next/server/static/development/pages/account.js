@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 7);
+/******/ 	return __webpack_require__(__webpack_require__.s = 6);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -2074,36 +2074,43 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_MyLayout__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/MyLayout */ "./components/MyLayout.js");
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-redux */ "react-redux");
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_redux__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! styled-components */ "styled-components");
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_3__);
 var _jsxFileName = "C:\\Users\\obafa\\Documents\\chef-femi\\pages\\account.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
+
+const Title = styled_components__WEBPACK_IMPORTED_MODULE_3___default.a.h1`
+	font-size: 2em;
+	text-align: center;
+	color: black;
+`;
 function Account() {
   function Show() {
     const this_user = Object(react_redux__WEBPACK_IMPORTED_MODULE_2__["useSelector"])(state => state.users.current_user);
-    console.log(this_user);
 
     if (this_user) {
       return __jsx("div", {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 11,
+          lineNumber: 17,
           columnNumber: 5
         }
       }, __jsx("p", {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 12,
+          lineNumber: 18,
           columnNumber: 6
         }
       }, "Username: ", Object.keys(this_user)), __jsx("p", {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 13,
+          lineNumber: 19,
           columnNumber: 7
         }
       }, "Password: ", Object.values(this_user)));
@@ -2113,7 +2120,7 @@ function Account() {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 17,
+        lineNumber: 23,
         columnNumber: 10
       }
     }, "Log In");
@@ -2123,21 +2130,21 @@ function Account() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 21,
+      lineNumber: 27,
       columnNumber: 3
     }
-  }, __jsx("p", {
+  }, __jsx(Title, {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 22,
+      lineNumber: 28,
       columnNumber: 4
     }
-  }, "Look at your profile information!"), __jsx(Show, {
+  }, "Account"), __jsx(Show, {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 23,
+      lineNumber: 29,
       columnNumber: 4
     }
   }));
@@ -2145,7 +2152,7 @@ function Account() {
 
 /***/ }),
 
-/***/ 7:
+/***/ 6:
 /*!********************************!*\
   !*** multi ./pages/account.js ***!
   \********************************/
@@ -2209,6 +2216,17 @@ module.exports = require("react-is");
 /***/ (function(module, exports) {
 
 module.exports = require("react-redux");
+
+/***/ }),
+
+/***/ "styled-components":
+/*!************************************!*\
+  !*** external "styled-components" ***!
+  \************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("styled-components");
 
 /***/ }),
 
