@@ -517,7 +517,6 @@ function cartsReducer(state = {
       });
 
     case 'DELETE_FROM_CART':
-      // const items = state.posts.filter(product => )
       return _objectSpread({}, state, {
         cart: [...state.cart, action.payload]
       });

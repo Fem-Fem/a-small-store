@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 7);
+/******/ 	return __webpack_require__(__webpack_require__.s = 3);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -381,6 +381,94 @@ const Layout = props => __jsx("div", {
 }), props.children);
 
 /* harmony default export */ __webpack_exports__["default"] = (Layout);
+
+/***/ }),
+
+/***/ "./components/Product.js":
+/*!*******************************!*\
+  !*** ./components/Product.js ***!
+  \*******************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "react-redux");
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_redux__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _redux_actions_product_actions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../redux/actions/product_actions */ "./redux/actions/product_actions.js");
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_3__);
+var _jsxFileName = "C:\\Users\\obafa\\Documents\\chef-femi\\components\\Product.js";
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+
+
+
+
+function Product(this_product) {
+  const dispatch = Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["useDispatch"])();
+  return __jsx("div", {
+    className: "Product",
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 11,
+      columnNumber: 3
+    }
+  }, "Product: ", __jsx(next_link__WEBPACK_IMPORTED_MODULE_3___default.a, {
+    href: "product/" + this_product.this_product.title,
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 12,
+      columnNumber: 13
+    }
+  }, __jsx("a", {
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 13,
+      columnNumber: 5
+    }
+  }, this_product.this_product.title)), __jsx("div", {
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 15,
+      columnNumber: 4
+    }
+  }, this_product.this_product.title), __jsx("div", {
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 16,
+      columnNumber: 4
+    }
+  }, (() => {
+    switch (this_product.this_product.availableForSale) {
+      case true:
+        return "Available";
+
+      case false:
+        return "Not available";
+    }
+  })()), __jsx("button", {
+    onClick: () => dispatch({
+      type: 'ADD_TO_CART',
+      payload: this_product.this_product
+    }),
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 24,
+      columnNumber: 4
+    }
+  }, "Add to cart"));
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (Product);
 
 /***/ }),
 
@@ -2059,100 +2147,186 @@ module.exports = __webpack_require__(/*! ./dist/client/link */ "./node_modules/n
 
 /***/ }),
 
-/***/ "./pages/account.js":
-/*!**************************!*\
-  !*** ./pages/account.js ***!
-  \**************************/
+/***/ "./pages/menu.js":
+/*!***********************!*\
+  !*** ./pages/menu.js ***!
+  \***********************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Account; });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _components_MyLayout__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/MyLayout */ "./components/MyLayout.js");
-/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-redux */ "react-redux");
-/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_redux__WEBPACK_IMPORTED_MODULE_2__);
-var _jsxFileName = "C:\\Users\\obafa\\Documents\\chef-femi\\pages\\account.js";
+/* harmony import */ var _components_Product__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/Product */ "./components/Product.js");
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-redux */ "react-redux");
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react_redux__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var shopify_buy__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! shopify-buy */ "shopify-buy");
+/* harmony import */ var shopify_buy__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(shopify_buy__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var redux__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! redux */ "redux");
+/* harmony import */ var redux__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(redux__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _redux_actions_product_actions__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../redux/actions/product_actions */ "./redux/actions/product_actions.js");
+var _jsxFileName = "C:\\Users\\obafa\\Documents\\chef-femi\\pages\\menu.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
-function Account() {
-  function Show() {
-    const this_user = Object(react_redux__WEBPACK_IMPORTED_MODULE_2__["useSelector"])(state => state.users.current_user);
-    console.log(this_user);
 
-    if (this_user) {
-      return __jsx("div", {
-        __self: this,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 11,
-          columnNumber: 5
-        }
-      }, __jsx("p", {
-        __self: this,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 12,
-          columnNumber: 6
-        }
-      }, "Username: ", Object.keys(this_user)), __jsx("p", {
-        __self: this,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 13,
-          columnNumber: 7
-        }
-      }, "Password: ", Object.values(this_user)));
-    }
 
-    return __jsx("p", {
+
+
+
+let arr = [];
+const client = shopify_buy__WEBPACK_IMPORTED_MODULE_4___default.a.buildClient({
+  storefrontAccessToken: '26853603f3b67fead6e3bcf3ee602758',
+  domain: 'a-very-small-store.myshopify.com'
+});
+client.product.fetchAll().then(res => res.forEach(i => arr.push(i)));
+
+class Menu extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      products: []
+    };
+  }
+
+  componentDidMount() {
+    this.props.getProducts();
+    client.product.fetchAll().then(res => {
+      this.setState({
+        products: [res]
+      });
+    });
+  } // dispatch(getProducts())
+
+
+  render() {
+    return __jsx(_components_MyLayout__WEBPACK_IMPORTED_MODULE_1__["default"], {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 17,
-        columnNumber: 10
+        lineNumber: 43,
+        columnNumber: 4
       }
-    }, "Log In");
+    }, __jsx("p", {
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 44,
+        columnNumber: 5
+      }
+    }, "Menu"), this.props.products.map(product => __jsx(_components_Product__WEBPACK_IMPORTED_MODULE_2__["default"], {
+      key: product.title,
+      this_product: product,
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 45,
+        columnNumber: 41
+      }
+    })));
   }
 
-  return __jsx(_components_MyLayout__WEBPACK_IMPORTED_MODULE_1__["default"], {
-    __self: this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 21,
-      columnNumber: 3
-    }
-  }, __jsx("p", {
-    __self: this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 22,
-      columnNumber: 4
-    }
-  }, "Look at your profile information!"), __jsx(Show, {
-    __self: this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 23,
-      columnNumber: 4
-    }
-  }));
 }
+
+function mapStateToProps(state) {
+  return {
+    products: state.products.products
+  };
+}
+
+function mapDispatchToProps(dispatch) {
+  return {
+    getProducts: () => dispatch(Object(_redux_actions_product_actions__WEBPACK_IMPORTED_MODULE_6__["getProducts"])())
+  };
+} // const mapDispatchToProps = (dispatch) => {
+// 	return {
+// 		getProducts: (client) => { dispatch({type: 'GET_PRODUCTS', payload: arr})}
+// 	}
+// }
+// function mapDispatchToProps(dispatch) {
+// 	return {
+// 		actions: bindActionCreators(getProducts)
+// 	};
+// }
+
+
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_3__["connect"])(mapStateToProps, mapDispatchToProps)(Menu));
 
 /***/ }),
 
-/***/ 7:
-/*!********************************!*\
-  !*** multi ./pages/account.js ***!
-  \********************************/
+/***/ "./redux/action-types.js":
+/*!*******************************!*\
+  !*** ./redux/action-types.js ***!
+  \*******************************/
+/*! exports provided: GET_PRODUCTS, PRODUCT_IS_1, GET_CART, ADD_TO_CART, LOG_IN, LOG_OUT, ADD_USER, GET_USERS */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "GET_PRODUCTS", function() { return GET_PRODUCTS; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PRODUCT_IS_1", function() { return PRODUCT_IS_1; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "GET_CART", function() { return GET_CART; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ADD_TO_CART", function() { return ADD_TO_CART; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LOG_IN", function() { return LOG_IN; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LOG_OUT", function() { return LOG_OUT; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ADD_USER", function() { return ADD_USER; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "GET_USERS", function() { return GET_USERS; });
+const GET_PRODUCTS = "GET_PRODUCTS";
+const PRODUCT_IS_1 = "PRODUCT_IS_1";
+const GET_CART = "GET_CART";
+const ADD_TO_CART = "ADD_TO_CART";
+const LOG_IN = "LOG_IN";
+const LOG_OUT = "LOG_OUT";
+const ADD_USER = "ADD_USER";
+const GET_USERS = "GET_USERS";
+
+/***/ }),
+
+/***/ "./redux/actions/product_actions.js":
+/*!******************************************!*\
+  !*** ./redux/actions/product_actions.js ***!
+  \******************************************/
+/*! exports provided: getProducts */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getProducts", function() { return getProducts; });
+/* harmony import */ var _action_types_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../action-types.js */ "./redux/action-types.js");
+/* harmony import */ var shopify_buy__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! shopify-buy */ "shopify-buy");
+/* harmony import */ var shopify_buy__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(shopify_buy__WEBPACK_IMPORTED_MODULE_1__);
+
+
+
+const client = shopify_buy__WEBPACK_IMPORTED_MODULE_1___default.a.buildClient({
+  storefrontAccessToken: '26853603f3b67fead6e3bcf3ee602758',
+  domain: 'a-very-small-store.myshopify.com'
+}); // export function productIs1() {
+// 	return {type: PRODUCT_IS_1};
+// }
+
+const getProducts = () => {
+  return dispatch => {
+    client.product.fetchAll().then(product => dispatch({
+      type: _action_types_js__WEBPACK_IMPORTED_MODULE_0__["GET_PRODUCTS"],
+      payload: product
+    }));
+  };
+};
+
+/***/ }),
+
+/***/ 3:
+/*!*****************************!*\
+  !*** multi ./pages/menu.js ***!
+  \*****************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\obafa\Documents\chef-femi\pages\account.js */"./pages/account.js");
+module.exports = __webpack_require__(/*! C:\Users\obafa\Documents\chef-femi\pages\menu.js */"./pages/menu.js");
 
 
 /***/ }),
@@ -2212,6 +2386,28 @@ module.exports = require("react-redux");
 
 /***/ }),
 
+/***/ "redux":
+/*!************************!*\
+  !*** external "redux" ***!
+  \************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("redux");
+
+/***/ }),
+
+/***/ "shopify-buy":
+/*!******************************!*\
+  !*** external "shopify-buy" ***!
+  \******************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("shopify-buy");
+
+/***/ }),
+
 /***/ "url":
 /*!**********************!*\
   !*** external "url" ***!
@@ -2224,4 +2420,4 @@ module.exports = require("url");
 /***/ })
 
 /******/ });
-//# sourceMappingURL=account.js.map
+//# sourceMappingURL=menu.js.map

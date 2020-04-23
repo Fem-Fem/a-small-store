@@ -32,8 +32,8 @@ function Filter() {
 				<Link href="/account">
 					<a style={linkStyle}>Account</a>
 				</Link>
-				<Link href="/logout">
-					<a style={linkStyle}>Log Out</a>
+				<Link href="/">
+					<a style={linkStyle} onClick={() => dispatch({type: 'LOG_OUT', username: current_user.username, password: current_user.password})}>Log Out</a>
 				</Link>
 			</div>
 		 )

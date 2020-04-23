@@ -20,7 +20,6 @@ export default function cartsReducer(state = {
 			}
 
 		case 'DELETE_FROM_CART':
-			// const items = state.posts.filter(product => )
 			return {
 				...state,
 				cart: [

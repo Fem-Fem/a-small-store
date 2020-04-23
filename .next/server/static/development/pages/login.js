@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 7);
+/******/ 	return __webpack_require__(__webpack_require__.s = 6);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -2059,101 +2059,168 @@ module.exports = __webpack_require__(/*! ./dist/client/link */ "./node_modules/n
 
 /***/ }),
 
-/***/ "./pages/account.js":
-/*!**************************!*\
-  !*** ./pages/account.js ***!
-  \**************************/
+/***/ "./pages/login.js":
+/*!************************!*\
+  !*** ./pages/login.js ***!
+  \************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Account; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Login; });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _components_MyLayout__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/MyLayout */ "./components/MyLayout.js");
-/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-redux */ "react-redux");
-/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_redux__WEBPACK_IMPORTED_MODULE_2__);
-var _jsxFileName = "C:\\Users\\obafa\\Documents\\chef-femi\\pages\\account.js";
+/* harmony import */ var formik__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! formik */ "formik");
+/* harmony import */ var formik__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(formik__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-redux */ "react-redux");
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react_redux__WEBPACK_IMPORTED_MODULE_3__);
+var _jsxFileName = "C:\\Users\\obafa\\Documents\\chef-femi\\pages\\login.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
-function Account() {
-  function Show() {
-    const this_user = Object(react_redux__WEBPACK_IMPORTED_MODULE_2__["useSelector"])(state => state.users.current_user);
-    console.log(this_user);
 
-    if (this_user) {
-      return __jsx("div", {
-        __self: this,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 11,
-          columnNumber: 5
-        }
-      }, __jsx("p", {
-        __self: this,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 12,
-          columnNumber: 6
-        }
-      }, "Username: ", Object.keys(this_user)), __jsx("p", {
-        __self: this,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 13,
-          columnNumber: 7
-        }
-      }, "Password: ", Object.values(this_user)));
+function Login() {
+  const users = Object(react_redux__WEBPACK_IMPORTED_MODULE_3__["useSelector"])(state => state.users.users);
+  const dispatch = Object(react_redux__WEBPACK_IMPORTED_MODULE_3__["useDispatch"])();
+
+  function Verify(email, password) {
+    const usernames = Object.keys(users);
+
+    if (usernames.includes(email)) {
+      if (users[email] == password) {
+        return true;
+      }
     }
 
-    return __jsx("p", {
-      __self: this,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 17,
-        columnNumber: 10
-      }
-    }, "Log In");
+    return false;
   }
 
   return __jsx(_components_MyLayout__WEBPACK_IMPORTED_MODULE_1__["default"], {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 21,
+      lineNumber: 22,
       columnNumber: 3
     }
-  }, __jsx("p", {
-    __self: this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 22,
-      columnNumber: 4
-    }
-  }, "Look at your profile information!"), __jsx(Show, {
+  }, __jsx("div", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 23,
       columnNumber: 4
     }
-  }));
+  }, __jsx(formik__WEBPACK_IMPORTED_MODULE_2__["Formik"], {
+    initialValues: {
+      email: '',
+      password: ''
+    },
+    validate: values => {
+      const errors = {};
+
+      if (!values.email) {
+        errors.email = 'Required';
+      } else if (!values.password) {
+        errors.password = 'Required';
+      } else if (!Verify(values.email, values.password)) {
+        errors.verify = "Not a user";
+      }
+
+      console.log(errors);
+      return errors;
+    },
+    onSubmit: (values, {
+      actions
+    }) => {
+      console.log(values);
+      dispatch({
+        type: 'LOG_IN',
+        username: values.email,
+        password: values.password
+      });
+    },
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 24,
+      columnNumber: 5
+    }
+  }, ({
+    values,
+    errors,
+    touched,
+    handleChange,
+    handleBlur,
+    handleSubmit,
+    isSubmitting
+  }) => __jsx("form", {
+    onSubmit: handleSubmit,
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 52,
+      columnNumber: 6
+    }
+  }, __jsx("input", {
+    type: "email",
+    name: "email",
+    onChange: handleChange,
+    onBlur: handleBlur,
+    value: values.email,
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 53,
+      columnNumber: 7
+    }
+  }), __jsx("input", {
+    type: "password",
+    name: "password",
+    onChange: handleChange,
+    onBlur: handleBlur,
+    value: values.password,
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 60,
+      columnNumber: 7
+    }
+  }), __jsx("button", {
+    type: "submit",
+    disabled: isSubmitting,
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 67,
+      columnNumber: 7
+    }
+  }, "Log In")))));
 }
 
 /***/ }),
 
-/***/ 7:
-/*!********************************!*\
-  !*** multi ./pages/account.js ***!
-  \********************************/
+/***/ 6:
+/*!******************************!*\
+  !*** multi ./pages/login.js ***!
+  \******************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\obafa\Documents\chef-femi\pages\account.js */"./pages/account.js");
+module.exports = __webpack_require__(/*! C:\Users\obafa\Documents\chef-femi\pages\login.js */"./pages/login.js");
 
+
+/***/ }),
+
+/***/ "formik":
+/*!*************************!*\
+  !*** external "formik" ***!
+  \*************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("formik");
 
 /***/ }),
 
@@ -2224,4 +2291,4 @@ module.exports = require("url");
 /***/ })
 
 /******/ });
-//# sourceMappingURL=account.js.map
+//# sourceMappingURL=login.js.map

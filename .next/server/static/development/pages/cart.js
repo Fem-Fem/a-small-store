@@ -203,7 +203,7 @@ function Filter() {
         columnNumber: 6
       }
     }, "Account")), __jsx(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
-      href: "/logout",
+      href: "/",
       __self: this,
       __source: {
         fileName: _jsxFileName,
@@ -212,6 +212,11 @@ function Filter() {
       }
     }, __jsx("a", {
       style: linkStyle,
+      onClick: () => dispatch({
+        type: 'LOG_OUT',
+        username: current_user.username,
+        password: current_user.password
+      }),
       __self: this,
       __source: {
         fileName: _jsxFileName,

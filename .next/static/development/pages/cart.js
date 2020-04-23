@@ -113,7 +113,7 @@ function Filter() {
         columnNumber: 6
       }
     }, "Account")), __jsx(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
-      href: "/logout",
+      href: "/",
       __self: this,
       __source: {
         fileName: _jsxFileName,
@@ -122,6 +122,13 @@ function Filter() {
       }
     }, __jsx("a", {
       style: linkStyle,
+      onClick: function onClick() {
+        return dispatch({
+          type: 'LOG_OUT',
+          username: current_user.username,
+          password: current_user.password
+        });
+      },
       __self: this,
       __source: {
         fileName: _jsxFileName,
@@ -17545,7 +17552,7 @@ var getProducts = function getProducts() {
 
 /***/ }),
 
-/***/ 3:
+/***/ 2:
 /*!***********************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2Fcart&absolutePagePath=C%3A%5CUsers%5Cobafa%5CDocuments%5Cchef-femi%5Cpages%5Ccart.js ***!
   \***********************************************************************************************************************************/
@@ -17568,5 +17575,5 @@ module.exports = dll_2adc2403d89adc16ead0;
 
 /***/ })
 
-},[[3,"static/runtime/webpack.js"]]]);
+},[[2,"static/runtime/webpack.js"]]]);
 //# sourceMappingURL=cart.js.map
