@@ -1,6 +1,6 @@
 import Layout from '../../components/MyLayout';
 import { useRouter } from 'next/router';
-import ProductDetails from '../../components/productDetails';
+import ProductDetails from '../../components/ProductDetails';
 import { connect } from 'react-redux';
 import {useSelector, useDispatch} from 'react-redux';
 
