@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 5);
+/******/ 	return __webpack_require__(__webpack_require__.s = 3);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -361,21 +361,19 @@ var _jsxFileName = "C:\\Users\\obafa\\Documents\\chef-femi\\components\\MyLayout
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
-const layoutStyle = {};
 
 const Layout = props => __jsx("div", {
-  style: layoutStyle,
   __self: undefined,
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 7,
+    lineNumber: 4,
     columnNumber: 2
   }
 }, __jsx(_Header__WEBPACK_IMPORTED_MODULE_1__["default"], {
   __self: undefined,
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 8,
+    lineNumber: 5,
     columnNumber: 3
   }
 }), props.children);
@@ -2096,7 +2094,7 @@ function Index() {
 
 /***/ }),
 
-/***/ 5:
+/***/ 3:
 /*!*******************************!*\
   !*** multi ./pages/index.tsx ***!
   \*******************************/

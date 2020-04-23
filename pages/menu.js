@@ -5,6 +5,8 @@ import Client from 'shopify-buy';
 import {useSelector, useDispatch} from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { getProducts } from '../redux/actions/product_actions';
+import {Title, Item} from '../components/Format';
+
 
 let arr = []
 const client = Client.buildClient({
@@ -36,13 +38,11 @@ class Menu extends React.Component {
 		});
 	}
 
-
-	// dispatch(getProducts())
 	render() {
 		return (
 			<Layout>
-				<p>Menu</p>
-				{this.props.products.map(product => <Product key={product.title} this_product={product}/>)}
+				<Title>Menu</Title>
+				{this.props.products.map(product => <Item><Product key={product.title} this_product={product}/></Item>)}
 			</Layout>
 		);
 	}
@@ -59,18 +59,5 @@ function mapDispatchToProps(dispatch) {
 		getProducts: () => dispatch(getProducts())
 	};
 }
-
-// const mapDispatchToProps = (dispatch) => {
-// 	return {
-// 		getProducts: (client) => { dispatch({type: 'GET_PRODUCTS', payload: arr})}
-// 	}
-// }
-
-// function mapDispatchToProps(dispatch) {
-// 	return {
-// 		actions: bindActionCreators(getProducts)
-// 	};
-// }
-
 
 export default connect(mapStateToProps, mapDispatchToProps)(Menu);

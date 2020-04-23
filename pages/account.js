@@ -1,12 +1,6 @@
 import Layout from '../components/MyLayout';
 import {useSelector, useDispatch} from 'react-redux';
-import styled from 'styled-components';
-
-const Title = styled.h1`
-	font-size: 2em;
-	text-align: center;
-	color: black;
-`;
+import {Title} from '../components/Format';
 
 export default function Account() {
 	function Show() {

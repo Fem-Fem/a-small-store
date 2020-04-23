@@ -88,10 +88,36 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 6);
+/******/ 	return __webpack_require__(__webpack_require__.s = 8);
 /******/ })
 /************************************************************************/
 /******/ ({
+
+/***/ "./components/Format.jsx":
+/*!*******************************!*\
+  !*** ./components/Format.jsx ***!
+  \*******************************/
+/*! exports provided: Title, Item */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Title", function() { return Title; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Item", function() { return Item; });
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! styled-components */ "styled-components");
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_0__);
+
+const Title = styled_components__WEBPACK_IMPORTED_MODULE_0___default.a.h1`
+	font-size: 2em;
+	text-align: center;
+	color: black;
+`;
+const Item = styled_components__WEBPACK_IMPORTED_MODULE_0___default.a.h1`
+    background: transparent;
+    padding: 0.25em 1em;
+`;
+
+/***/ }),
 
 /***/ "./components/Header.js":
 /*!******************************!*\
@@ -361,21 +387,19 @@ var _jsxFileName = "C:\\Users\\obafa\\Documents\\chef-femi\\components\\MyLayout
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
-const layoutStyle = {};
 
 const Layout = props => __jsx("div", {
-  style: layoutStyle,
   __self: undefined,
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 7,
+    lineNumber: 4,
     columnNumber: 2
   }
 }, __jsx(_Header__WEBPACK_IMPORTED_MODULE_1__["default"], {
   __self: undefined,
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 8,
+    lineNumber: 5,
     columnNumber: 3
   }
 }), props.children);
@@ -2074,19 +2098,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_MyLayout__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/MyLayout */ "./components/MyLayout.js");
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-redux */ "react-redux");
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_redux__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! styled-components */ "styled-components");
-/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _components_Format__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/Format */ "./components/Format.jsx");
 var _jsxFileName = "C:\\Users\\obafa\\Documents\\chef-femi\\pages\\account.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
 
-const Title = styled_components__WEBPACK_IMPORTED_MODULE_3___default.a.h1`
-	font-size: 2em;
-	text-align: center;
-	color: black;
-`;
 function Account() {
   function Show() {
     const this_user = Object(react_redux__WEBPACK_IMPORTED_MODULE_2__["useSelector"])(state => state.users.current_user);
@@ -2096,21 +2114,21 @@ function Account() {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 17,
+          lineNumber: 11,
           columnNumber: 5
         }
       }, __jsx("p", {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 18,
+          lineNumber: 12,
           columnNumber: 6
         }
       }, "Username: ", Object.keys(this_user)), __jsx("p", {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 19,
+          lineNumber: 13,
           columnNumber: 7
         }
       }, "Password: ", Object.values(this_user)));
@@ -2120,7 +2138,7 @@ function Account() {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 23,
+        lineNumber: 17,
         columnNumber: 10
       }
     }, "Log In");
@@ -2130,21 +2148,21 @@ function Account() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 27,
+      lineNumber: 21,
       columnNumber: 3
     }
-  }, __jsx(Title, {
+  }, __jsx(_components_Format__WEBPACK_IMPORTED_MODULE_3__["Title"], {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 28,
+      lineNumber: 22,
       columnNumber: 4
     }
   }, "Account"), __jsx(Show, {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 29,
+      lineNumber: 23,
       columnNumber: 4
     }
   }));
@@ -2152,7 +2170,7 @@ function Account() {
 
 /***/ }),
 
-/***/ 6:
+/***/ 8:
 /*!********************************!*\
   !*** multi ./pages/account.js ***!
   \********************************/

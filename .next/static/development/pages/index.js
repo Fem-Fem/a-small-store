@@ -277,22 +277,20 @@ var _this = undefined,
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
-var layoutStyle = {};
 
 var Layout = function Layout(props) {
   return __jsx("div", {
-    style: layoutStyle,
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 7,
+      lineNumber: 4,
       columnNumber: 2
     }
   }, __jsx(_Header__WEBPACK_IMPORTED_MODULE_1__["default"], {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 8,
+      lineNumber: 5,
       columnNumber: 3
     }
   }), props.children);
@@ -7473,7 +7471,7 @@ function Index() {
 
 /***/ }),
 
-/***/ 3:
+/***/ 1:
 /*!*********************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2F&absolutePagePath=C%3A%5CUsers%5Cobafa%5CDocuments%5Cchef-femi%5Cpages%5Cindex.tsx ***!
   \*********************************************************************************************************************************/
@@ -7496,5 +7494,5 @@ module.exports = dll_2adc2403d89adc16ead0;
 
 /***/ })
 
-},[[3,"static/runtime/webpack.js"]]]);
+},[[1,"static/runtime/webpack.js"]]]);
 //# sourceMappingURL=index.js.map

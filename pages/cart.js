@@ -1,7 +1,7 @@
 import Layout from '../components/MyLayout';
 import {useSelector, useDispatch} from 'react-redux';
 import Product from '../components/Product';
-
+import {Title, Item} from '../components/Format';
 
 	function Show() {
 		const this_cart = useSelector(state => state.cart.cart)
@@ -23,7 +23,7 @@ import Product from '../components/Product';
 			}
 		}
 		console.log(arr_prod)
-		return arr_prod.map(product => <div><Product key={product} this_product={product}/> {arr_quant[arr_prod.indexOf(product)]}</div>)
+		return arr_prod.map(product => <Item><Product key={product} this_product={product}/> {arr_quant[arr_prod.indexOf(product)]}</Item>)
 		// return <div>Hi</div>
 
 	}
@@ -31,6 +31,7 @@ import Product from '../components/Product';
 export default function Cart() {
 	return (
 		<Layout>
+			<Title>Cart</Title>
 			<Show />
 		</Layout>
 	);

@@ -88,10 +88,36 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 4);
+/******/ 	return __webpack_require__(__webpack_require__.s = 5);
 /******/ })
 /************************************************************************/
 /******/ ({
+
+/***/ "./components/Format.jsx":
+/*!*******************************!*\
+  !*** ./components/Format.jsx ***!
+  \*******************************/
+/*! exports provided: Title, Item */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Title", function() { return Title; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Item", function() { return Item; });
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! styled-components */ "styled-components");
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_0__);
+
+const Title = styled_components__WEBPACK_IMPORTED_MODULE_0___default.a.h1`
+	font-size: 2em;
+	text-align: center;
+	color: black;
+`;
+const Item = styled_components__WEBPACK_IMPORTED_MODULE_0___default.a.h1`
+    background: transparent;
+    padding: 0.25em 1em;
+`;
+
+/***/ }),
 
 /***/ "./components/Header.js":
 /*!******************************!*\
@@ -361,21 +387,19 @@ var _jsxFileName = "C:\\Users\\obafa\\Documents\\chef-femi\\components\\MyLayout
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
-const layoutStyle = {};
 
 const Layout = props => __jsx("div", {
-  style: layoutStyle,
   __self: undefined,
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 7,
+    lineNumber: 4,
     columnNumber: 2
   }
 }, __jsx(_Header__WEBPACK_IMPORTED_MODULE_1__["default"], {
   __self: undefined,
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 8,
+    lineNumber: 5,
     columnNumber: 3
   }
 }), props.children);
@@ -2167,9 +2191,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var redux__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! redux */ "redux");
 /* harmony import */ var redux__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(redux__WEBPACK_IMPORTED_MODULE_5__);
 /* harmony import */ var _redux_actions_product_actions__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../redux/actions/product_actions */ "./redux/actions/product_actions.js");
+/* harmony import */ var _components_Format__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../components/Format */ "./components/Format.jsx");
 var _jsxFileName = "C:\\Users\\obafa\\Documents\\chef-femi\\pages\\menu.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
 
 
 
@@ -2199,8 +2225,7 @@ class Menu extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
         products: [res]
       });
     });
-  } // dispatch(getProducts())
-
+  }
 
   render() {
     return __jsx(_components_MyLayout__WEBPACK_IMPORTED_MODULE_1__["default"], {
@@ -2210,23 +2235,30 @@ class Menu extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
         lineNumber: 43,
         columnNumber: 4
       }
-    }, __jsx("p", {
+    }, __jsx(_components_Format__WEBPACK_IMPORTED_MODULE_7__["Title"], {
       __self: this,
       __source: {
         fileName: _jsxFileName,
         lineNumber: 44,
         columnNumber: 5
       }
-    }, "Menu"), this.props.products.map(product => __jsx(_components_Product__WEBPACK_IMPORTED_MODULE_2__["default"], {
-      key: product.title,
-      this_product: product,
+    }, "Menu"), this.props.products.map(product => __jsx(_components_Format__WEBPACK_IMPORTED_MODULE_7__["Item"], {
       __self: this,
       __source: {
         fileName: _jsxFileName,
         lineNumber: 45,
         columnNumber: 41
       }
-    })));
+    }, __jsx(_components_Product__WEBPACK_IMPORTED_MODULE_2__["default"], {
+      key: product.title,
+      this_product: product,
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 45,
+        columnNumber: 47
+      }
+    }))));
   }
 
 }
@@ -2241,17 +2273,7 @@ function mapDispatchToProps(dispatch) {
   return {
     getProducts: () => dispatch(Object(_redux_actions_product_actions__WEBPACK_IMPORTED_MODULE_6__["getProducts"])())
   };
-} // const mapDispatchToProps = (dispatch) => {
-// 	return {
-// 		getProducts: (client) => { dispatch({type: 'GET_PRODUCTS', payload: arr})}
-// 	}
-// }
-// function mapDispatchToProps(dispatch) {
-// 	return {
-// 		actions: bindActionCreators(getProducts)
-// 	};
-// }
-
+}
 
 /* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_3__["connect"])(mapStateToProps, mapDispatchToProps)(Menu));
 
@@ -2319,7 +2341,7 @@ const getProducts = () => {
 
 /***/ }),
 
-/***/ 4:
+/***/ 5:
 /*!*****************************!*\
   !*** multi ./pages/menu.js ***!
   \*****************************/
@@ -2405,6 +2427,17 @@ module.exports = require("redux");
 /***/ (function(module, exports) {
 
 module.exports = require("shopify-buy");
+
+/***/ }),
+
+/***/ "styled-components":
+/*!************************************!*\
+  !*** external "styled-components" ***!
+  \************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("styled-components");
 
 /***/ }),
 
