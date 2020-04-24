@@ -18,7 +18,7 @@ function Filter() {
   const current_user = useSelector((state) => state.users.current_user);
   if (!isEmpty(current_user)) {
     return (
-      <div>
+      <div className="headerComponent">
         <Link href="/">
           <a style={linkStyle}>Home</a>
         </Link>
@@ -49,7 +49,7 @@ function Filter() {
     );
   }
   return (
-    <div>
+    <div className="headerComponent">
       <Link href="/">
         <a style={linkStyle}>Home</a>
       </Link>
