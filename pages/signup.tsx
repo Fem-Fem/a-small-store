@@ -10,15 +10,22 @@ export default function Login() {
         <Formik
           initialValues={{ email: "", password: "" }}
           validate={(values) => {
-            const errors = {};
+            const errors = {
+              email: "default",
+              password: "default",
+            };
             if (!values.email) {
               errors.email = "Required";
             } else if (!values.password) {
               errors.password = "Required";
             }
+            console.log(errors);
+            if (errors.email == "default" && errors.password == "default") {
+              return {};
+            }
             return errors;
           }}
-          onSubmit={(values, { actions }) => {
+          onSubmit={(values, {}) => {
             console.log(values);
             dispatch({
               type: "ADD_USER",

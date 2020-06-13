@@ -1,9 +1,10 @@
 import Layout from "../components/MyLayout";
 import { useSelector, useDispatch } from "react-redux";
 import Product from "../components/Product";
+import React, { Component } from "react";
 import { Title, Item } from "../components/Format";
 
-function Show() {
+export default function Cart() {
   const this_cart = useSelector((state) => state.cart.cart);
   const arr_prod = [];
   const arr_quant = [];
@@ -22,20 +23,20 @@ function Show() {
         arr_quant[arr_prod.indexOf(this_cart[i])] + 1;
     }
   }
-  console.log(arr_prod);
-  return arr_prod.map((product) => (
+
+  let x = arr_prod.map((product) => (
     <Item>
       <Product key={product} this_product={product} />{" "}
       {arr_quant[arr_prod.indexOf(product)]}
     </Item>
   ));
-}
 
-export default function Cart() {
+  console.log(arr_prod);
   return (
     <Layout>
       <Title>Cart</Title>
-      <Show />
+      <React.Fragment>{x}</React.Fragment>
+      console.log(arr_prodyo)
     </Layout>
   );
 }
