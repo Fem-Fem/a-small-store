@@ -23,7 +23,11 @@ export default function Login() {
         <Formik
           initialValues={{ email: "", password: "" }}
           validate={(values) => {
-            const errors = {};
+            const errors = {
+              email: "default",
+              password: "default",
+              verify: "default",
+            };
             if (!values.email) {
               errors.email = "Required";
             } else if (!values.password) {
@@ -32,15 +36,24 @@ export default function Login() {
               errors.verify = "Not a user";
             }
             console.log(errors);
+            if (
+              errors.email == "default" &&
+              errors.password == "default" &&
+              errors.verify == "default"
+            ) {
+              return {};
+            }
             return errors;
           }}
-          onSubmit={(values, { actions }) => {
+          onSubmit={(values, actions) => {
+            console.log("HIT ON SUBMIT");
             console.log(values);
             dispatch({
               type: "LOG_IN",
               username: values.email,
               password: values.password,
             });
+            console.log("HIT ON SUBMIT 2");
           }}
         >
           {({

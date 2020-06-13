@@ -65,9 +65,6 @@ function Filter() {
       <Link href="/login">
         <a style={linkStyle}>Log In</a>
       </Link>
-      <Link href="/account">
-        <a style={linkStyle}>Account</a>
-      </Link>
     </div>
   );
 }
