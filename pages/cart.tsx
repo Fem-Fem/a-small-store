@@ -36,7 +36,6 @@ export default function Cart() {
     <Layout>
       <Title>Cart</Title>
       <React.Fragment>{x}</React.Fragment>
-      console.log(arr_prodyo)
     </Layout>
   );
 }
